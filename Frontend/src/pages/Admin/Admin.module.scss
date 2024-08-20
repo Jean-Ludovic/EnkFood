@@ -1,0 +1,60 @@
+.add_product_form {
+  max-width: 600px;
+  min-width: 300px; // Permettez une certaine flexibilité pour les écrans plus petits
+  margin: auto;
+  background-color: #fff; // ou une couleur légèrement différente du thème de votre site
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); // Ajoute une ombre douce pour le relief
+  border-radius: 10px; // Adoucit les coins
+
+  h2 {
+    text-align: center;
+    color: #FFA500; // Une couleur qui matche le thème, comme le orange de votre logo
+    margin-bottom: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; // Assurez-vous de choisir une police en accord avec le reste de l'UI
+  }
+
+  label,
+  input,
+  button,
+  .button { // Si vous avez un bouton avec une classe spécifique
+    width: 100%;
+    display: block;
+  }
+
+  label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    color: #333; // Couleur de texte subtile
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] { // Ciblez différents types d'input si nécessaire
+    padding: 10px 15px;
+    outline: 0;
+    border: 1px solid #ccc; // Utilisez une couleur de bordure qui s'harmonise bien
+    border-radius: 5px; // Bords arrondis
+    margin-bottom: 20px; // Espacez les inputs
+    font-size: 14px;
+  }
+
+  button,
+  .button { // Styles pour vos boutons
+    padding: 10px 15px;
+    border: none;
+    background-color: #FFA500; // Utilisez une couleur qui se démarque mais reste harmonieuse
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken(#FFA500, 10%); // Assombrir le bouton lors du survol
+    }
+  }
+}

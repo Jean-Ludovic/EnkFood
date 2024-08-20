@@ -1,0 +1,17 @@
+.menuContainer {
+  position: absolute;
+  top: 50px;
+  right: 90px;
+  width: auto;
+  background-color: rgb(226, 199, 21);
+  li {
+    padding: 10px 10px;
+    cursor: pointer;
+    display: block;
+    transition: background-color 0.2s, color 0.2s;
+    &:hover {
+      background-color: var(--favoris);
+      color: rgb(227, 217, 21);
+    }
+  }
+}

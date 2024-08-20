@@ -1,0 +1,14 @@
+_id,name,image,note
+6620bd710540b9c6a194b54e,Jollof Rice,http://localhost:5000/assets/images/produits/image2.webp,"jollof, riz, legumes"
+6620bd710540b9c6a194b54f,Yassar Poulet,http://localhost:5000/assets/images/produits/yassaPoulet.webp,"poulet, yassar, riz"
+6620bd710540b9c6a194b550,Poisson,http://localhost:5000/assets/images/produits/poissonTogo.webp,Poisson
+6620bd710540b9c6a194b551,poisson,http://localhost:5000/assets/images/produits/poissonAssaisoné.webp,"poisson, sauce,"
+6620bd710540b9c6a194b552,atiéké-Poulet,http://localhost:5000/assets/images/produits/atiéképoulé.webp,"dokunu, kom, boule"
+6620bd710540b9c6a194b553,Foufou sauce graine,http://localhost:5000/assets/images/produits/foufouSauceGraine.webp,"sauce,tomate,poissons,dessi"
+6620bd710540b9c6a194b554,foufou Sauce légumes,http://localhost:5000/assets/images/produits/foufouSauce.webp,"foufou, légume"
+6620bd710540b9c6a194b555,Gombo,http://localhost:5000/assets/images/produits/gombo.webp,"riz, sauce, gombo"
+6620bd710540b9c6a194b556,Pâte-Haricot,http://localhost:5000/assets/images/produits/pateHaricot.webp,"pâte,haricot"
+6620bd710540b9c6a194b557,Porc au four,http://localhost:5000/assets/images/produits/porc.webp,"légumes, porc"
+6620bd710540b9c6a194b558,Alloco,http://localhost:5000/assets/images/produits/Alloco.webp,"plantin, alloco, amanda"
+6620bd710540b9c6a194b559,Atiéké poisson fumé,http://localhost:5000/assets/images/produits/apf.webp," atiéké, poisson"
+6620bd710540b9c6a194b55a,Ndolè riz,http://localhost:5000/assets/images/produits/ndole.webp,"riz, ndolè, sauce"

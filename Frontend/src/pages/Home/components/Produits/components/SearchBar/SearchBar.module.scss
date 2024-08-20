@@ -1,0 +1,22 @@
+.searchBar {
+  padding: 10px 15px;
+  border: 2px solid var(--gray-2);
+  border-radius: 20px;
+  background-color: white;
+  input {
+    outline: 0;
+    border: 0;
+  }
+  i {
+    cursor: pointer;
+  }
+}
+
+.searchBarFilter {
+  display: none;
+  input {
+    outline: 0;
+    border: 0;
+    padding: 10px;
+  }
+}

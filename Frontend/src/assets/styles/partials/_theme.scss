@@ -1,0 +1,42 @@
+.container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+.calc {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+.border {
+  border: 1px solid var(--favoris);
+}
+.parallax {
+  /* The image used */
+  background-image: url(assets/images/bg-beton.jpg);
+
+  /* Set a specific height */
+  min-height: 80px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.visible {
+  display: block;
+  transform: scale(1);
+  opacity: 1;
+  animation: anim 0.6s ease-in-out;
+}
+.hidden {
+  display: none;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
