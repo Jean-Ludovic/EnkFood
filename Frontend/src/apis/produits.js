@@ -1,4 +1,7 @@
-const PRODUITS_URL = "http://localhost:5000/produits";
+//const PRODUITS_URL = "http://localhost:5000/produits";
+// Use same-domain API in prod; works locally too if server runs on 3000 and proxies
+const API_BASE = import.meta.env.VITE_API_URL ?? ""; // usually empty on Render
+const PRODUITS_URL = `${API_BASE}/api/produits`;
 
 export const getProduit = async (produitId) => {
   const response = await fetch(`${PRODUITS_URL}/${produitId}`);
