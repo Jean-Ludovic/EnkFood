@@ -1,39 +1,31 @@
-// Packages NPM
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
-
-// Modules natifs
 const path = require("path");
 
-// Modules locaux
-
-require("./database");//Chargement DB
-const routes = require("./routes");//Routes
+// Chargement base de données
+require("./database");
 
 const app = express();
-
 app.use(morgan("short"));
-app.use(cors());//pas nécessaire en prod
-
-app.use(express.static(path.join(__dirname, "public")));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(routes);
+// ======== ROUTES API ========
+const routes = require("./routes");
+app.use("/api", routes);
 
-// Healthcheck
-app.get("/health", (_req, res) => res.json({ ok: true }));
-
-// ===== Servir le build Vite (Frontend/dist) =====
+// ======== SERVIR LE FRONTEND (Vite build) ========
 const clientDist = path.join(__dirname, "../Frontend/dist");
 app.use(express.static(clientDist));
-// Fallback SPA : toutes les routes non-API → index.html
+
+// Catch-all pour les routes SPA React
 app.get("*", (req, res, next) => {
-  if (req.path.startsWith("/api")) return next();
+  if (req.path.startsWith("/api")) return next(); // ne pas interférer avec l’API
   res.sendFile(path.join(clientDist, "index.html"));
 });
 
-// ===== Port =====
+// ======== DÉMARRAGE DU SERVEUR ========
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
