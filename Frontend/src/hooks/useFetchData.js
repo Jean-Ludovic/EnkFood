@@ -10,7 +10,7 @@ const useFetchData = (url) => {
         const response = await fetch(url);
 
         if (!response.ok) {
-          console.error("Erreur HTTP:", response.status);
+          console.error("Erreur HTTP:", response.status, response.statusText);
           setIsLoading(false);
           return;
         }
@@ -18,7 +18,7 @@ const useFetchData = (url) => {
         const json = await response.json();
         console.log("Réponse API:", json);
 
-        // Ton backend renvoie : { data: [...] }
+        // Ton backend renvoie { data: [...] }
         const value = json.data ?? json;
 
         setData(Array.isArray(value) ? value : [value]);

@@ -1,5 +1,8 @@
 import { createContext } from "react";
 
-const ApiContext = createContext({ BASE_URL: "http://localhost:5000" });
+// On utilise "/api" comme base : donnera "/api/produits"
+const ApiContext = createContext({
+  BASE_URL: "/api",
+});
 
 export default ApiContext;
