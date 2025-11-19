@@ -18,9 +18,7 @@ const useFetchData = (url) => {
         const json = await response.json();
         console.log("Réponse API:", json);
 
-        // Ton backend renvoie { data: [...] }
-        const value = json.data ?? json;
-
+        const value = json.data ?? json;   // <- CLE : on lit json.data
         setData(Array.isArray(value) ? value : [value]);
       } catch (error) {
         console.error("Erreur réseau:", error);
