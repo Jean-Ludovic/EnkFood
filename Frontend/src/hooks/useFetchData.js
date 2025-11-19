@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const useFetchData = (url) => {
   const [data, setData] = useState([]);
@@ -6,19 +6,31 @@ const useFetchData = (url) => {
 
   useEffect(() => {
     const getData = async () => {
-      fetch(url)
-        .then((reponse) => {
-          if (reponse.ok) {
-            reponse.json().then((data) => {
-              Array.isArray ? setData(data) : setData([data]);
-              setIsLoading(false);
-            });
-          }
-        })
-        .catch((e) => console.log(e));
+      try {
+        const response = await fetch(url);
+
+        if (!response.ok) {
+          console.error("Erreur HTTP:", response.status);
+          setIsLoading(false);
+          return;
+        }
+
+        const json = await response.json();
+        console.log("Réponse API:", json);
+
+        // Ton backend renvoie : { data: [...] }
+        const value = json.data ?? json;
+
+        setData(Array.isArray(value) ? value : [value]);
+      } catch (error) {
+        console.error("Erreur réseau:", error);
+      } finally {
+        setIsLoading(false);
+      }
     };
+
     getData();
-  }, []);
+  }, [url]);
 
   return [data, setData, isLoading];
 };

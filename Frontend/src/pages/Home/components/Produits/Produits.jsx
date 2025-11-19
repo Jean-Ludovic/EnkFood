@@ -9,14 +9,13 @@ import { deleteProduit } from "../../../../apis";
 
 const Produits = ({ visible }) => {
   const { BASE_URL } = useContext(ApiContext);
+
   const [filterInput, setFilterInput] = useState("");
   const [filterBy, setFilterBy] = useState({ byName: true, byNote: false });
   const produitsFavorisContext = useContext(ProduitFavorisContext);
 
-  
-  const [produits, setProduits, isLoading] = useFetchData(
-    `${BASE_URL}/produits`
-  );
+  // 🟩 Correction : le hook est OK si BASE_URL = https://enkfood.onrender.com/api
+  const [produits, setProduits, isLoading] = useFetchData(`${BASE_URL}/produits`);
 
   function handleInput(e) {
     const filter = e.target.value;
@@ -41,8 +40,10 @@ const Produits = ({ visible }) => {
   const supprimerUnProduit = async (produitId) => {
     try {
       const response = await deleteProduit(produitId);
-      if (response == produitId)
-        setProduits(produits.filter((produit) => produit._id != produitId));
+
+      if (response === produitId) {
+        setProduits(produits.filter((produit) => produit._id !== produitId));
+      }
     } catch (error) {
       console.log(error);
     }
@@ -61,13 +62,16 @@ const Produits = ({ visible }) => {
             handleFilter={handleFilter}
             filterBy={filterBy}
           />
+
           <div className={`${styles.grid} container`}>
             {produits
               .filter((item) => {
                 if (filterBy.byName === true && filterBy.byNote === false)
                   return item.name.trim().toLowerCase().includes(filterInput);
+
                 if (filterBy.byName === false && filterBy.byNote === true)
                   return item.note.trim().toLowerCase().includes(filterInput);
+
                 return (
                   item.note.trim().toLowerCase().includes(filterInput) ||
                   item.name.trim().toLowerCase().includes(filterInput)
@@ -79,7 +83,6 @@ const Produits = ({ visible }) => {
                     data={item}
                     saved={getItemSavedState(item)}
                     supprimerUnProduit={supprimerUnProduit}
-                 
                   />
                 </Fragment>
               ))}
