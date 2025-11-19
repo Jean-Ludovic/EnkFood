@@ -2,19 +2,19 @@ export const produits = [
   {
     _id: 1,
     name: "Couscous",
-    image: "assets/images/produits/image1.webp",
+    image: "assets/images/couscous.jpeg/",
     note: "Couscous, legumes",
   },
   {
     _id: 2,
     name: "Jollof Rice",
-    image: "assets/images/produits/image2.webp",
+    image: "assets/images/rizpouleet.jpeg",
     note: "jollof, riz, legumes",
   },
   { 
     _id: 3,
     name: "Yassar Poulet",
-    image: "assets/images/produits/yassaPoulet.webp",
+    image: "assets/images/poulet yassa.jpeg",
     note: "poulet, yassar, riz",
   },
   {
